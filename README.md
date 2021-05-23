@@ -1,4 +1,4 @@
-# WebThreatAnalizer
+# Web Threat Analyzer
 
 ### Description
 

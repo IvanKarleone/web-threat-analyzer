@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "web-threat-analizer": {
+    "web-threat-analyzer": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/web-threat-analizer",
+            "outputPath": "dist/web-threat-analyzer",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -63,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "web-threat-analizer:build"
+            "browserTarget": "web-threat-analyzer:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "web-threat-analizer:build:production"
+              "browserTarget": "web-threat-analyzer:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "web-threat-analizer:build"
+            "browserTarget": "web-threat-analyzer:build"
           }
         },
         "test": {
@@ -111,15 +111,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "web-threat-analizer:serve"
+            "devServerTarget": "web-threat-analyzer:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "web-threat-analizer:serve:production"
+              "devServerTarget": "web-threat-analyzer:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "web-threat-analizer"
+  "defaultProject": "web-threat-analyzer"
 }
