@@ -1,0 +1,19 @@
+@import "src/scss/colors";
+
+.card {
+  border: none;
+
+  .card-icon {
+    font-size: 65px;
+    cursor: default;
+    color: $dark-green;
+  }
+
+  .card-title {
+    font-weight: 600;
+  }
+
+  .card-text {
+    padding: 0 50px;
+  }
+}

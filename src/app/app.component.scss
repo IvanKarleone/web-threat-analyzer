@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import "src/scss/colors";
+
+:host {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: $black;
+}
