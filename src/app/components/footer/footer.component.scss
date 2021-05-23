@@ -1,0 +1,19 @@
+@import "src/scss/colors";
+
+.footer-container {
+  padding: 25px 0;
+  background: $black;
+
+  .text {
+    margin: 0 0 0 20px;
+    color: $white;
+  }
+
+  .link-container {
+    padding: 0 10px;
+
+    &:last-child {
+      padding: 0 0 0 10px;
+    }
+  }
+}

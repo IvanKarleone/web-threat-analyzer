@@ -1,0 +1,38 @@
+@import "../../../scss/colors";
+
+.header-container {
+  position: sticky;
+  top: 0;
+  background: $black;
+  border: 1px solid #363636;
+  z-index: 1;
+
+  .navbar-brand, .nav-item {
+    cursor: pointer;
+  }
+
+  .navbar-brand {
+    color: $green;
+    font-weight: 500;
+  }
+
+  .navbar-nav {
+    margin-left: auto;
+
+    .nav-link {
+      color: $white;
+
+      &:hover {
+        color: $green;
+      }
+    }
+  }
+
+  .login-btn {
+    margin-left: 15px;
+    background: $dark-green;
+    color: white;
+    font-size: inherit;
+    text-transform: uppercase;
+  }
+}
