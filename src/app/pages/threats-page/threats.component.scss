@@ -1,0 +1,61 @@
+@import "src/scss/colors";
+
+$transition: all 0.3s ease 0s;
+
+:host {
+  .threats-container {
+    padding: 80px 0;
+    background: $black;
+    border-bottom: 1px solid $border;
+
+    .title {
+      color: $white;
+      font-weight: 500;
+    }
+
+    .description {
+      margin: 15px 0;
+      color: $white;
+    }
+
+    .table {
+      &-head {
+        color: $white;
+        transition: $transition;
+
+        &:hover {
+          color: $dark-green;
+        }
+      }
+
+      &-body {
+        .table-row {
+          color: $white;
+          transition: $transition;
+
+          &:hover {
+            color: $green;
+            border-color: $green;
+          }
+
+          &:last-child {
+            .cell-1, .cell-2 {
+              border: none;
+            }
+          }
+        }
+      }
+
+      &-row {
+        .cell-1 {
+          width: 25%;
+        }
+
+        .cell-2 {
+          width: 75%;
+        }
+      }
+
+    }
+  }
+}
