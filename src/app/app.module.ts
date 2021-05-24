@@ -8,6 +8,7 @@ import { MainComponent } from './pages/main/main.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CardComponent } from './components/card/card.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ThreatsComponent } from './pages/threats-page/threats.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FooterComponent } from './components/footer/footer.component';
     MainComponent,
     HeaderComponent,
     CardComponent,
-    FooterComponent
+    FooterComponent,
+    ThreatsComponent
   ],
   imports: [
     AppRoutingModule,
