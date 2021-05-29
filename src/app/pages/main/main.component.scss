@@ -1,10 +1,8 @@
-@import "src/scss/colors";
-
-$padding-container: 80px 0;
+@import "../../../scss/variables";
 
 :host {
   .description-container {
-    padding: $padding-container;
+    padding: $main-padding;
     background: $black;
 
     .title {
@@ -32,11 +30,7 @@ $padding-container: 80px 0;
   }
 
   .use-cases-container {
-    padding: $padding-container;
-
-    .title {
-      font-weight: 600;
-    }
+    padding: $main-padding;
 
     .description {
       font-size: 18px;

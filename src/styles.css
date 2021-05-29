@@ -1,3 +1,11 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
 .middle-wrapper {
   max-width: 75vw;
   margin: 0 auto;
