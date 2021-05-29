@@ -8,7 +8,14 @@ import { MainComponent } from './pages/main/main.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CardComponent } from './components/card/card.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { ThreatsComponent } from './pages/threats-page/threats.component';
+import { ThreatsComponent } from './pages/threats/threats.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ApiService } from './services/api-service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,14 +24,20 @@ import { ThreatsComponent } from './pages/threats-page/threats.component';
     HeaderComponent,
     CardComponent,
     FooterComponent,
-    ThreatsComponent
+    ThreatsComponent,
+    ContactComponent
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
-    RouterModule
+    BrowserAnimationsModule,
+    RouterModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

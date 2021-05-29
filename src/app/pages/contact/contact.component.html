@@ -1,0 +1,57 @@
+<div class="main-container">
+  <main>
+    <app-header></app-header>
+
+    <div class="contact-container">
+      <div class="middle-wrapper">
+        <h2 class="title">Contact</h2>
+      </div>
+    </div>
+
+    <div class="feedback-container">
+      <div class="middle-wrapper">
+        <div class="description">
+          <div class="row">
+            <div class="col-6">
+              <p class="bold">This application was created with the aim of improving the security of websites.</p>
+              <p class="bold">Use it to your advantage :) </p>
+              <p>
+                <a class="link" href="https://github.com/IvanKarleone" target="_blank">Stay on Github</a>
+              </p>
+              <p>Use the form below with your questions or suggestions.</p>
+            </div>
+            <div class="col-6">
+              <img src="assets/img/world-map.png" width="300" height="181" alt="world-map">
+            </div>
+          </div>
+        </div>
+        <form class="form" [formGroup]="form">
+          <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput [formControl]="form.name">
+            <mat-error *ngIf="form.name.invalid">{{getErrorMessage(form.name, 'Name')}}</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Surname</mat-label>
+            <input matInput [formControl]="form.surname">
+            <mat-error *ngIf="form.surname.invalid">{{getErrorMessage(form.surname, 'Surname')}}</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" [formControl]="form.email">
+            <mat-error *ngIf="form.email.invalid">{{getErrorMessage(form.email, 'Email')}}</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="message">
+            <mat-label>Your message</mat-label>
+            <textarea matInput [formControl]="form.message"></textarea>
+            <mat-error *ngIf="form.message.invalid">{{getErrorMessage(form.message, 'Message')}}</mat-error>
+          </mat-form-field>
+        </form>
+        <button type="submit" class="btn submit-btn" (click)="onSubmit()">Submit</button>
+        <p class="success-message bold">{{sendEmailMessage}}</p>
+      </div>
+    </div>
+
+    <app-footer></app-footer>
+  </main>
+</div>

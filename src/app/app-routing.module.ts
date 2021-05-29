@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './pages/main/main.component';
-import {ThreatsComponent} from './pages/threats-page/threats.component';
+import {ThreatsComponent} from './pages/threats/threats.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 export const routes: Routes = [
   {
@@ -11,6 +12,10 @@ export const routes: Routes = [
   {
     path: 'threats',
     component: ThreatsComponent
+  },
+  {
+    path: 'contact',
+    component: ContactComponent
   },
   { path: '**', redirectTo: '' },
 ];
