@@ -28,17 +28,17 @@
         <form class="form" [formGroup]="form">
           <mat-form-field appearance="outline">
             <mat-label>Name</mat-label>
-            <input matInput [formControl]="form.name">
+            <input matInput [formControl]="form.name" [maxLength]="255">
             <mat-error *ngIf="form.name.invalid">{{getErrorMessage(form.name, 'Name')}}</mat-error>
           </mat-form-field>
           <mat-form-field appearance="outline">
             <mat-label>Surname</mat-label>
-            <input matInput [formControl]="form.surname">
+            <input matInput [formControl]="form.surname" [maxLength]="255">
             <mat-error *ngIf="form.surname.invalid">{{getErrorMessage(form.surname, 'Surname')}}</mat-error>
           </mat-form-field>
           <mat-form-field appearance="outline">
             <mat-label>Email</mat-label>
-            <input matInput type="email" [formControl]="form.email">
+            <input matInput type="email" [formControl]="form.email" [maxLength]="255">
             <mat-error *ngIf="form.email.invalid">{{getErrorMessage(form.email, 'Email')}}</mat-error>
           </mat-form-field>
           <mat-form-field appearance="outline" class="message">
@@ -47,7 +47,7 @@
             <mat-error *ngIf="form.message.invalid">{{getErrorMessage(form.message, 'Message')}}</mat-error>
           </mat-form-field>
         </form>
-        <button type="submit" class="btn submit-btn" (click)="onSubmit()">Submit</button>
+        <button type="submit" class="btn submit-btn" [class.disabled-btn]="form.invalid" (click)="onSubmit()">Submit</button>
         <p class="success-message bold">{{sendEmailMessage}}</p>
       </div>
     </div>

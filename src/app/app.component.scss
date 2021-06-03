@@ -10,3 +10,22 @@ app-root {
 .bold {
   font-weight: 600;
 }
+
+.submit-btn {
+  background: $dark-green;
+  color: $white;
+
+  &:hover {
+    color: $white;
+  }
+}
+
+.disabled-btn {
+  background: #aba7a7;
+  color: $white;
+  cursor: default !important;
+
+  &:hover {
+    color: $white;
+  }
+}

@@ -1,0 +1,66 @@
+@import "src/scss/variables";
+
+:host {
+  .login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: calc(100vh - 58px);
+
+    &-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
+      margin-top: -23px;
+      border: 1px solid #CCD0D4;
+      box-shadow: -2px -1px 12px -1px rgba(34, 60, 80, 0.2);
+      border-radius: 5px;
+
+      &-email-container, &-password-container {
+        display: flex;
+        flex-direction: column;
+
+        .label {
+          font-size: 12px;
+        }
+
+        .input {
+          padding: 5px 10px;
+          border: 1px solid rgba(0, 0, 0, 0.12);
+          border-radius: 3px;
+
+          &:focus {
+            outline: none;
+            border: 1px solid $dark-green;
+            caret-color: $dark-green;
+          }
+
+          &.ng-touched.ng-invalid {
+            border-color: $error;
+          }
+        }
+
+        .mat-error {
+          margin-top: 2px;
+          font-size: 11px;
+        }
+      }
+
+      &-password-container {
+        margin: 10px 20px;
+      }
+
+      .not-correct-credentials {
+        margin-top: 5px;
+        font-size: 12px;
+        color: $error;
+      }
+    }
+  }
+}
