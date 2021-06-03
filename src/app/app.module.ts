@@ -16,6 +16,10 @@ import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ApiService } from './services/api-service';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './pages/login/login.component';
+import { NgxsModule } from '@ngxs/store';
+import { LoginState } from './store/login/login.state';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -25,7 +29,8 @@ import { HttpClientModule } from '@angular/common/http';
     CardComponent,
     FooterComponent,
     ThreatsComponent,
-    ContactComponent
+    ContactComponent,
+    LoginComponent
   ],
   imports: [
     AppRoutingModule,
@@ -35,7 +40,10 @@ import { HttpClientModule } from '@angular/common/http';
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxsModule.forRoot([LoginState], {
+      developmentMode: !environment.production
+    }),
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]

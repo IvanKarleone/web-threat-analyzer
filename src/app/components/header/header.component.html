@@ -1,13 +1,13 @@
 <div class="header-container">
   <div class="middle-wrapper">
     <nav class="navbar navbar-expand">
-      <span class="navbar-brand" routerLink="">Web Analyzer</span>
+      <span class="navbar-brand" routerLink="/">Web Analyzer</span>
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" routerLink="">Main</a>
+          <a class="nav-link" routerLink="/">Main</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link">Analyze</a>
+          <a class="nav-link">Scan</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/threats">Threats</a>
@@ -16,7 +16,8 @@
           <a class="nav-link" routerLink="/contact">Contact</a>
         </li>
       </ul>
-      <button type="button" class="btn login-btn">Log in</button>
+      <button *ngIf="!(isLogin$ | async)" type="button" class="btn login-btn" routerLink="/login">Log in</button>
+      <button *ngIf="isLogin$ | async" type="button" class="btn logout-btn" (click)="logout()">Log out</button>
     </nav>
   </div>
 </div>

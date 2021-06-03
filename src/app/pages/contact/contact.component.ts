@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, ChangeDetectorRef, Component} from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { AbstractControl } from '@angular/forms';
 import { ContactFormGroup } from './contact-form-group';
 import { ApiService } from '../../services/api-service';
@@ -13,7 +13,6 @@ import { take, tap } from 'rxjs/operators';
 })
 export class ContactComponent {
   public form: ContactFormGroup;
-  public URL: string = 'https://formspree.io/f/xjvjwwng';
   public sendEmailMessage: string = '';
 
   constructor(private apiService: ApiService, private ref: ChangeDetectorRef) {
@@ -39,7 +38,7 @@ export class ContactComponent {
         message: this.form.message.value,
       };
 
-      this.apiService.sendEmailMessage(this.URL, emailMessage).pipe(
+      this.apiService.sendEmailMessage(emailMessage).pipe(
         take(1),
         tap({
           next: () => {
