@@ -4,7 +4,7 @@
   position: sticky;
   top: 0;
   background: $black;
-  border: 1px solid $border;
+  border-bottom: $border-bottom;
   z-index: 1;
 
   .navbar-brand, .nav-item {
@@ -35,4 +35,26 @@
     font-size: inherit;
     text-transform: uppercase;
   }
+}
+
+.user-menu-main-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .user-menu-icon {
+    color: $white;
+    transition: color 0.15s ease 0s;
+
+    &:hover {
+      color: $green;
+    }
+  }
+}
+
+.user-menu-btn {
+  display: flex;
+  align-items: center;
+  padding-right: 45px;
+  color: $black;
 }

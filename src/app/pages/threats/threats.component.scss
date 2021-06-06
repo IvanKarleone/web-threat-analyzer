@@ -6,7 +6,7 @@ $transition: all 0.3s ease 0s;
   .threats-container {
     padding: $main-padding;
     background: $black;
-    border-bottom: 1px solid $border;
+    border-bottom: $border-bottom;
 
     .title {
       color: $white;

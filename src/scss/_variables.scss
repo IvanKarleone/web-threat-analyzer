@@ -1,8 +1,17 @@
 $white: #FFFFFF;
 $black: #222222;
-$border: #363636;
 $green: #4ECDA7;
 $dark-green: #01807E;
 $error: rgba(209, 4, 4, 0.5);
+$grey-background: #F9F9F9;
+$grey-icon: #D9D8D8;
+$placeholder-color: #CAC8C8;
+
+$border-bottom: 1px solid #363636;
+$form-border: 1px solid #E2E7E9;
+$input-border: 1px solid rgba(0, 0, 0, 0.12);
+
+// 155px = header height + footer height
+$height-main-container: calc(100vh - 155px);
 
 $main-padding: 80px 0;

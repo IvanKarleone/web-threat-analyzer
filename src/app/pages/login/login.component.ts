@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Actions, ofActionCompleted, Select, Store } from '@ngxs/store';
-import { ErrorAction, Login, LoginSuccess } from '../../store/login/login.actions';
-import { ROUTES } from '../../consts/routes';
+import { Actions, ofActionCompleted, Store } from '@ngxs/store';
+import { ErrorAction, Login } from '../../store/login/login.actions';
+import { ROUTES } from '../../consts/routes.const';
 import { Router } from '@angular/router';
 import { take } from 'rxjs/operators';
-import { LoginState } from '../../store/login/login.state';
-import { Observable } from 'rxjs';
+import { getFormControlErrorMessage } from '../../utils';
+import { GetUserByEmail, GetUsersSuccess } from '../../store/user/user.actions';
 
 @Component({
   selector: 'app-login',
@@ -15,8 +15,6 @@ import { Observable } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoginComponent implements OnInit {
-  @Select(LoginState.isLogin) public isLogin$: Observable<boolean>;
-
   public form: FormGroup;
   public isCorrectCredentials: boolean = true;
 
@@ -31,23 +29,17 @@ export class LoginComponent implements OnInit {
   constructor(private store: Store, private actions: Actions, private router: Router, private ref: ChangeDetectorRef) {
     this.form = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', Validators.required)
+      password: new FormControl('', [Validators.required, Validators.minLength(6)])
     });
   }
 
   public ngOnInit(): void {
-    this.initLoginSuccessListener();
+    this.initGetUsersSuccessListener();
     this.initErrorListener();
   }
 
   public getErrorMessage(control: AbstractControl, controlName: string): string {
-    if (control.hasError('required')) {
-      return `${controlName} is required`;
-    }
-    if (control.hasError('email')) {
-      return 'Not a valid email';
-    }
-    return '';
+    return getFormControlErrorMessage(control, controlName);
   }
 
   public onSubmit(): void {
@@ -56,11 +48,14 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  private initLoginSuccessListener(): void {
+  private initGetUsersSuccessListener(): void {
     this.actions.pipe(
-      ofActionCompleted(LoginSuccess),
+      ofActionCompleted(GetUsersSuccess),
       take(1)
-    ).subscribe(() => this.router.navigate([ROUTES.main]));
+    ).subscribe(() => {
+      this.store.dispatch(new GetUserByEmail(this.email.value));
+      this.router.navigate([ROUTES.main]);
+    });
   }
 
   private initErrorListener(): void {

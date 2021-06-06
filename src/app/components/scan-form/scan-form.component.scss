@@ -1,0 +1,104 @@
+@import "src/scss/variables";
+
+:host {
+  .form {
+    border: $form-border;
+    background: #FDFDFD;
+  }
+
+  .scan-type-buttons {
+    display: flex;
+    background: $grey-background;
+
+    .scan-type-btn {
+      position: relative;
+      padding: 15px 0;
+      font-size: 18px;
+      flex-grow: 1;
+      font-weight: 600;
+      color: $black;
+
+      &:hover::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: $dark-green;
+      }
+    }
+  }
+
+  .scan-url-container, .scan-file-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+
+    .scan-icon {
+      color: $grey-icon;
+      font-size: 65px;
+    }
+
+    .scan-input-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 85%;
+      margin-top: 15px;
+      padding: 5px 10px;
+      border: $input-border;
+      border-radius: 5px;
+
+      &.focus {
+        border-color: $dark-green;
+      }
+
+      &.error {
+        border-color: $error;
+      }
+
+      .scan-input {
+        width: 100%;
+        outline: none;
+        border: none;
+
+        &::placeholder {
+          color: $placeholder-color;
+        }
+      }
+
+      .search-icon {
+        color: $grey-icon;
+      }
+    }
+
+    .error-container {
+      width: 85%;
+      margin-top: 2px;
+
+      .mat-error {
+        font-size: 12px;
+      }
+    }
+
+    .scan-btn {
+      padding: 5px 30px;
+      margin: 15px 0;
+    }
+
+    .scan-description {
+      background: $grey-background;
+      margin: 0;
+      padding: 10px 15px;
+      text-align: center;
+      font-size: 12px;
+    }
+  }
+}
+
+::ng-deep .scan-tooltip {
+  max-width: unset;
+  font-size: 14px;
+}

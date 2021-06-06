@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { LoginState } from '../../store/login/login.state';
 import { Observable } from 'rxjs';
 import { Select, Store } from '@ngxs/store';
 import { Logout } from '../../store/login/login.actions';
+import { UserState } from '../../store/user/user.state';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +11,8 @@ import { Logout } from '../../store/login/login.actions';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent {
-  @Select(LoginState.isLogin) public isLogin$: Observable<boolean>;
+  @Select(UserState.isLogin) public isLogin$: Observable<boolean>;
+  @Select(UserState.fullName) public userFullName$: Observable<string>;
 
   constructor(private store: Store) {
   }

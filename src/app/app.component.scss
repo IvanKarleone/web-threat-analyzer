@@ -29,3 +29,7 @@ app-root {
     color: $white;
   }
 }
+
+.btn:focus {
+  box-shadow: none !important;
+}

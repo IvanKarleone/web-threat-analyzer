@@ -1,0 +1,28 @@
+@import "src/scss/variables";
+
+:host {
+  main {
+    height: $height-main-container;
+  }
+
+  .header-container {
+    padding: $main-padding;
+    background: $black;
+    text-align: center;
+
+    .header {
+      color: $white;
+      font-weight: 500;
+    }
+
+    .description {
+      color: $green;
+    }
+  }
+
+  .form-container {
+    width: 50%;
+    margin: 0 auto;
+    padding: 40px 0;
+  }
+}
