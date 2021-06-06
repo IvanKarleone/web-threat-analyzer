@@ -1,0 +1,43 @@
+@import "src/scss/variables";
+
+:host {
+  width: 85%;
+
+  .input-container {
+    width: 100%;
+    position: relative;
+    margin-top: 15px;
+    text-align: center;
+
+    .input {
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
+    }
+
+    .input-label-container {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      border: $input-border;
+      border-radius: 5px;
+    }
+
+    .input-label-description {
+      width: 75%;
+      padding: 5px 10px;
+      text-align: left;
+      color: $placeholder-color;
+    }
+
+    .input-label-btn {
+      width: 25%;
+      padding: 5px 30px;
+      background: $dark-green;
+      color: $white;
+      font-size: 16px;
+      font-weight: 500;
+      border-radius: 0 5px 5px 0;
+    }
+  }
+}

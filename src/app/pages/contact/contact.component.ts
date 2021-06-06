@@ -4,6 +4,7 @@ import { ContactFormGroup } from './contact-form-group';
 import { ApiService } from '../../services/api-service';
 import { IEmailMessage } from '../../intrerfaces/email-message';
 import { take, tap } from 'rxjs/operators';
+import { getFormControlErrorMessage } from '../../utils';
 
 @Component({
   selector: 'app-contact',
@@ -20,13 +21,7 @@ export class ContactComponent {
   }
 
   public getErrorMessage(control: AbstractControl, controlName: string): string {
-    if (control.hasError('required')) {
-      return `${controlName} is required`;
-    }
-    if (control.hasError('email')) {
-      return 'Not a valid email';
-    }
-    return '';
+    return getFormControlErrorMessage(control, controlName);
   }
 
   onSubmit(): void {

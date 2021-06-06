@@ -7,7 +7,7 @@
           <a class="nav-link" routerLink="/">Main</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link">Scan</a>
+          <a class="nav-link" routerLink="/scan">Scan</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/threats">Threats</a>
@@ -17,7 +17,19 @@
         </li>
       </ul>
       <button *ngIf="!(isLogin$ | async)" type="button" class="btn login-btn" routerLink="/login">Log in</button>
-      <button *ngIf="isLogin$ | async" type="button" class="btn logout-btn" (click)="logout()">Log out</button>
+      <button *ngIf="isLogin$ | async" class="user-menu-main-btn btn" mat-icon-button [matMenuTriggerFor]="menu">
+        <span class="user-menu-icon material-icons">person_pin</span>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item class="user-menu-btn">
+          <span class="user-menu-icon material-icons me-2">settings</span>
+          <span>{{userFullName$ | async}}</span>
+        </button>
+        <button mat-menu-item class="user-menu-btn" (click)="logout()">
+          <span class="user-menu-icon material-icons me-2">exit_to_app</span>
+          <span>Log out</span>
+        </button>
+      </mat-menu>
     </nav>
   </div>
 </div>

@@ -20,6 +20,12 @@ import { LoginComponent } from './pages/login/login.component';
 import { NgxsModule } from '@ngxs/store';
 import { LoginState } from './store/login/login.state';
 import { environment } from '../environments/environment';
+import { ScanComponent } from './pages/scan/scan.component';
+import { ScanFormComponent } from './components/scan-form/scan-form.component';
+import { InputFileComponent } from './components/input-file/input-file.component';
+import { UserState } from './store/user/user.state';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -30,7 +36,10 @@ import { environment } from '../environments/environment';
     FooterComponent,
     ThreatsComponent,
     ContactComponent,
-    LoginComponent
+    LoginComponent,
+    ScanComponent,
+    ScanFormComponent,
+    InputFileComponent
   ],
   imports: [
     AppRoutingModule,
@@ -41,7 +50,9 @@ import { environment } from '../environments/environment';
     MatInputModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgxsModule.forRoot([LoginState], {
+    MatMenuModule,
+    MatTooltipModule,
+    NgxsModule.forRoot([LoginState, UserState], {
       developmentMode: !environment.production
     }),
   ],

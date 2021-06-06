@@ -1,0 +1,16 @@
+<main>
+  <div class="header-container">
+    <div class="middle-wrapper">
+      <h2 class="header">Protect your application </h2>
+      <p class="description">Analyze suspicious files and URLs to detect types of malware, automatically share them with the security community</p>
+    </div>
+  </div>
+  <div class="middle-wrapper">
+    <div class="form-container">
+      <app-scan-form
+        [scanType]="scanType"
+        (setScanTypeEvent)="onSetScanType($event)">
+      </app-scan-form>
+    </div>
+  </div>
+</main>

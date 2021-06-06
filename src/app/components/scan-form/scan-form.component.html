@@ -1,0 +1,53 @@
+<form [formGroup]="form" class="form">
+  <div class="scan-type-buttons">
+    <button type="button" class="scan-type-btn btn text-uppercase" (click)="setScanType('Url')">Url</button>
+    <button type="button" class="scan-type-btn btn" (click)="setScanType('File')">File</button>
+  </div>
+  <div class="scan-container">
+
+    <div *ngIf="scanType === 'Url'" class="scan-url-container">
+      <span class="material-icons scan-icon">vpn_lock</span>
+      <div #urlInputContainer class="scan-input-container" [class.error]="url.invalid && url.touched">
+        <input
+          class="scan-input"
+          placeholder="Search or scan a URL"
+          [formControl]="url"
+          (focus)="addUrlInputContainerClass('focus')"
+          (blur)="removeUrlInputContainerClass('focus')">
+        <span class="material-icons search-icon">search</span>
+      </div>
+      <div class="error-container">
+        <mat-error class="mat-error" *ngIf="url.touched && url.invalid">{{getErrorMessage(url, 'URL')}}</mat-error>
+      </div>
+      <button
+        type="submit"
+        class="scan-btn submit-btn btn"
+        [matTooltip]="!(isLogin$ | async) ? 'Please log in to use the scan' : ''"
+        matTooltipClass="scan-tooltip"
+        [matTooltipShowDelay]="150"
+        [class.disabled-btn]="form.invalid || !(isLogin$ | async)"
+        (click)="submitScan()">
+        <span>Scan</span>
+      </button>
+      <p class="scan-description">By submitting data above will start scanning your URL for major web threats such as SQL injection, XSS, Cross-site request forgery, Shortcomings of the authentication and session storage system, etc.</p>
+    </div>
+
+    <div *ngIf="scanType === 'File'" class="scan-file-container">
+      <span class="material-icons scan-icon">description</span>
+      <app-input-file></app-input-file>
+      <button
+        type="submit"
+        class="scan-btn submit-btn btn"
+        [matTooltip]="!(isLogin$ | async) ? 'Please log in to use the scan' : ''"
+        matTooltipClass="scan-tooltip"
+        [matTooltipShowDelay]="150"
+        [class.disabled-btn]="form.invalid || !(isLogin$ | async)"
+        (click)="submitScan()">
+        <span>Scan</span>
+      </button>
+      <p class="scan-description">By submitting data above will start scanning your file for viruses or malicious code using online antiviruses such as Dr.Web, NOD32, Kaspersky, etc.</p>
+    </div>
+
+  </div>
+</form>
+

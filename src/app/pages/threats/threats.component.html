@@ -1,52 +1,46 @@
-<div class="main-container">
-  <main>
-    <app-header></app-header>
-
-    <div class="threats-container">
-      <div class="middle-wrapper">
-        <h2 class="text-center title">Major Web Threats</h2>
-        <p class="text-center description">Security is one of the important indicators of the efficiency of information systems functioning, along with such indicators as reliability, fault tolerance, performance. To do this, below is a summary of the main threats you need to know.</p>
-        <table class="table">
-          <thead class="table-head">
-          <tr class="table-row">
-            <th class="cell-1">Threat</th>
-            <th class="cell-2">Description</th>
-          </tr>
-          </thead>
-          <tbody class="table-body">
-          <tr class="table-row">
-            <td class="cell-1">SQL injection</td>
-            <td class="cell-2">SQL injection is a code injection technique used to attack data-driven applications, in which malicious SQL statements are inserted into an entry field for execution (e.g. to dump the database contents to the attacker). SQL injection must exploit a security vulnerability in an application's software, for example, when user input is either incorrectly filtered for string literal escape characters embedded in SQL statements or user input is not strongly typed and unexpectedly executed. SQL injection is mostly known as an attack vector for websites but can be used to attack any type of SQL database.</td>
-          </tr>
-          <tr class="table-row">
-            <td class="cell-1">XSS</td>
-            <td class="cell-2">Cross-site scripting (XSS) is a type of security vulnerability typically found in web applications. XSS attacks enable attackers to inject client-side scripts into web pages viewed by other users. A cross-site scripting vulnerability may be used by attackers to bypass access controls such as the same-origin policy. Cross-site scripting carried out on websites accounted for roughly 84% of all security vulnerabilities documented by Symantec up until 2007. XSS effects vary in range from petty nuisance to significant security risk, depending on the sensitivity of the data handled by the vulnerable site and the nature of any security mitigation implemented by the site's owner network.</td>
-          </tr>
-          <tr class="table-row">
-            <td class="cell-1">Cross-site request forgery</td>
-            <td class="cell-2">CSRF also known as one-click attack or session riding is a type of malicious exploit of a website where unauthorized commands are submitted from a user that the web application trusts. There are many ways in which a malicious website can transmit such commands; specially-crafted image tags, hidden forms, and JavaScript XMLHttpRequests, for example, can all work without the user's interaction or even knowledge. Unlike cross-site scripting (XSS), which exploits the trust a user has for a particular site, CSRF exploits the trust that a site has in a user's browser.</td>
-          </tr>
-          <tr class="table-row">
-            <td class="cell-1">Shortcomings of the authentication and session storage system</td>
-            <td class="cell-2">To distinguish between users, the web application uses session data. After the user provides the application with authentication data and the application has performed authorization, a special identifier is stored in the browser storage, which the browser subsequently presents to the server with each request for a web application page. If this identifier is stolen by an attacker, and the system did not implement checks for other session attributes, such as the IP address of the session, or checks for more than one connection in one session, the attacker will be able to gain access to the system with the rights of an authorized user account.</td>
-          </tr>
-          <tr class="table-row">
-            <td class="cell-1">Insecure direct object references</td>
-            <td class="cell-2">This vulnerability is also the result of insufficient user data validation. The essence of the vulnerability lies in the fact that when displaying any confidential data, for example, personal messages or customer registration cards, an identifier is used to access the object, which is transmitted in clear text in the browser address bar, and the access rights to objects are not checked.</td>
-          </tr>
-          <tr class="table-row">
-            <td class="cell-1">Insecure configuration</td>
-            <td class="cell-2">Securing a web application requires a secure configuration of all infrastructure components: the web server application components, the database server, and the platform itself. The default settings of server components are often insecure and open to attack. In addition, the software must be up to date: vulnerabilities are found every day in a wide variety of software components - the operating system, web servers, database servers, mail servers.</td>
-          </tr>
-          <tr class="table-row">
-            <td class="cell-1">Insecurity of critical data</td>
-            <td class="cell-2">Many web applications do not protect sensitive data such as credit cards and authentication credentials. Attackers can steal or modify such weakly protected data for their own personal gain. The simplest example is Hypertext Transfer Protocol (HTTP) data transmission. The fact is that the data transmitted via the HTTP protocol is not encrypted in any way, and when data passes from the user's computer to the web server, the data will go through quite a few different nodes: an office router or home router, a provider's router, a router on a channel, a router in a data the center of the server hosting provider and so on. At each of these nodes, data can be intercepted and compromised. Such data should be transmitted exclusively over a secure communication channel, ensuring the authenticity of the user and resource, as well as data encryption.</td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
+<main>
+  <div class="threats-container">
+    <div class="middle-wrapper">
+      <h2 class="text-center title">Major Web Threats</h2>
+      <p class="text-center description">Security is one of the important indicators of the efficiency of information systems functioning, along with such indicators as reliability, fault tolerance, performance. To do this, below is a summary of the main threats you need to know.</p>
+      <table class="table">
+        <thead class="table-head">
+        <tr class="table-row">
+          <th class="cell-1">Threat</th>
+          <th class="cell-2">Description</th>
+        </tr>
+        </thead>
+        <tbody class="table-body">
+        <tr class="table-row">
+          <td class="cell-1">SQL injection</td>
+          <td class="cell-2">SQL injection is a code injection technique used to attack data-driven applications, in which malicious SQL statements are inserted into an entry field for execution (e.g. to dump the database contents to the attacker). SQL injection must exploit a security vulnerability in an application's software, for example, when user input is either incorrectly filtered for string literal escape characters embedded in SQL statements or user input is not strongly typed and unexpectedly executed. SQL injection is mostly known as an attack vector for websites but can be used to attack any type of SQL database.</td>
+        </tr>
+        <tr class="table-row">
+          <td class="cell-1">XSS</td>
+          <td class="cell-2">Cross-site scripting (XSS) is a type of security vulnerability typically found in web applications. XSS attacks enable attackers to inject client-side scripts into web pages viewed by other users. A cross-site scripting vulnerability may be used by attackers to bypass access controls such as the same-origin policy. Cross-site scripting carried out on websites accounted for roughly 84% of all security vulnerabilities documented by Symantec up until 2007. XSS effects vary in range from petty nuisance to significant security risk, depending on the sensitivity of the data handled by the vulnerable site and the nature of any security mitigation implemented by the site's owner network.</td>
+        </tr>
+        <tr class="table-row">
+          <td class="cell-1">Cross-site request forgery</td>
+          <td class="cell-2">CSRF also known as one-click attack or session riding is a type of malicious exploit of a website where unauthorized commands are submitted from a user that the web application trusts. There are many ways in which a malicious website can transmit such commands; specially-crafted image tags, hidden forms, and JavaScript XMLHttpRequests, for example, can all work without the user's interaction or even knowledge. Unlike cross-site scripting (XSS), which exploits the trust a user has for a particular site, CSRF exploits the trust that a site has in a user's browser.</td>
+        </tr>
+        <tr class="table-row">
+          <td class="cell-1">Shortcomings of the authentication and session storage system</td>
+          <td class="cell-2">To distinguish between users, the web application uses session data. After the user provides the application with authentication data and the application has performed authorization, a special identifier is stored in the browser storage, which the browser subsequently presents to the server with each request for a web application page. If this identifier is stolen by an attacker, and the system did not implement checks for other session attributes, such as the IP address of the session, or checks for more than one connection in one session, the attacker will be able to gain access to the system with the rights of an authorized user account.</td>
+        </tr>
+        <tr class="table-row">
+          <td class="cell-1">Insecure direct object references</td>
+          <td class="cell-2">This vulnerability is also the result of insufficient user data validation. The essence of the vulnerability lies in the fact that when displaying any confidential data, for example, personal messages or customer registration cards, an identifier is used to access the object, which is transmitted in clear text in the browser address bar, and the access rights to objects are not checked.</td>
+        </tr>
+        <tr class="table-row">
+          <td class="cell-1">Insecure configuration</td>
+          <td class="cell-2">Securing a web application requires a secure configuration of all infrastructure components: the web server application components, the database server, and the platform itself. The default settings of server components are often insecure and open to attack. In addition, the software must be up to date: vulnerabilities are found every day in a wide variety of software components - the operating system, web servers, database servers, mail servers.</td>
+        </tr>
+        <tr class="table-row">
+          <td class="cell-1">Insecurity of critical data</td>
+          <td class="cell-2">Many web applications do not protect sensitive data such as credit cards and authentication credentials. Attackers can steal or modify such weakly protected data for their own personal gain. The simplest example is Hypertext Transfer Protocol (HTTP) data transmission. The fact is that the data transmitted via the HTTP protocol is not encrypted in any way, and when data passes from the user's computer to the web server, the data will go through quite a few different nodes: an office router or home router, a provider's router, a router on a channel, a router in a data the center of the server hosting provider and so on. At each of these nodes, data can be intercepted and compromised. Such data should be transmitted exclusively over a secure communication channel, ensuring the authenticity of the user and resource, as well as data encryption.</td>
+        </tr>
+        </tbody>
+      </table>
     </div>
-
-    <app-footer></app-footer>
-  </main>
-</div>
+  </div>
+</main>
