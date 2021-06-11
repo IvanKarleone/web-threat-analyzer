@@ -1,11 +1,8 @@
 @import "../../../scss/variables";
 
 .header-container {
-  position: sticky;
-  top: 0;
   background: $black;
   border-bottom: $border-bottom;
-  z-index: 1;
 
   .navbar-brand, .nav-item {
     cursor: pointer;
@@ -57,4 +54,8 @@
   align-items: center;
   padding-right: 45px;
   color: $black;
+
+  .user-menu-icon {
+    color: $grey-icon;
+  }
 }

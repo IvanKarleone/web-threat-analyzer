@@ -1,0 +1,106 @@
+@import "src/scss/variables";
+
+:host {
+  .table-container {
+    height: 45vh;
+    overflow: auto;
+  }
+
+  .title {
+    margin: 0;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  .harmless {
+    color: #059E42;
+  }
+  .malicious {
+    color: #D54141;
+  }
+  .suspicious {
+    color: #FFBF21;
+  }
+  .undetected {
+    color: #858585;
+  }
+  .timeout {
+    color: #858585;
+  }
+
+  .scan-information-container {
+    width: 50%;
+    margin: 30px auto;
+    border: $form-border;
+    background: $grey-background;
+    padding: 10px 15px;
+
+    .section-container {
+      margin-top: 5px;
+
+      &-title {
+        font-size: 16px;
+        font-weight: 600;
+
+        &::after {
+          content: " ";
+        }
+      }
+    }
+
+    .statistics-container {
+      display: flex;
+      flex-direction: column;
+
+      .malicious, .suspicious, .undetected, .timeout {
+        margin-top: 3px;
+      }
+    }
+
+    .scan-information-icon-container {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+
+      .scan-information-icon {
+        font-size: 65px;
+        color: $grey-icon;
+        margin: 0 -5px -8px 0;
+      }
+    }
+  }
+
+  .scan-results-container {
+    width: 50%;
+    margin: 30px auto;
+
+    .table {
+      .table-head-cell {
+        font-size: 16px;
+        border-color: $black;
+        color: $black;
+      }
+
+      .table-cell-1, .table-cell-2 {
+        padding: 8px 15px;
+      }
+
+      .table-cell-1 {
+        width: 60%;
+        color: $black;
+        vertical-align: middle;
+      }
+
+      .table-cell-2 {
+        width: 40%;
+      }
+    }
+
+    .scan-category-icon {
+      display: inline-block;
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+  }
+}

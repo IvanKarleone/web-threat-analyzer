@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, NgZone } from '@angular/core';
 import { Action, Selector, State, StateContext } from '@ngxs/store';
 import { ApiService } from '../../services/api-service';
 import { ErrorAction, Login, LoginSuccess, Logout } from './login.actions';
@@ -8,6 +8,9 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { LOGIN_STORAGE_KEYS } from '../../consts/storages.const';
 import { Observable } from 'rxjs';
 import { ClearUserState, GetUsers } from '../user/user.actions';
+import { ClearScanState } from '../scan/scan.actions';
+import { Router } from '@angular/router';
+import { ROUTES } from '../../consts/routes.const';
 
 export class LoginStateModel {
   idToken: string;
@@ -27,7 +30,7 @@ export class LoginStateModel {
   defaults: LoginStateModel.getInitialState()
 })
 export class LoginState {
-  constructor(private apiService: ApiService) {
+  constructor(private apiService: ApiService, private router: Router, private ngZone: NgZone) {
   }
 
   @Selector()
@@ -65,10 +68,16 @@ export class LoginState {
 
   @Action(Logout)
   public logout(ctx: StateContext<LoginStateModel>): void {
+    this.ngZone.run(() => this.router.navigate([ROUTES.login]));
+
     localStorage.removeItem(LOGIN_STORAGE_KEYS.expiresIn);
     localStorage.removeItem(LOGIN_STORAGE_KEYS.formattedExpiresIn);
+
     ctx.setState(LoginStateModel.getInitialState());
-    ctx.dispatch(new ClearUserState());
+    ctx.dispatch([
+      new ClearUserState(),
+      new ClearScanState()
+    ]);
   }
 
   @Action(ErrorAction)

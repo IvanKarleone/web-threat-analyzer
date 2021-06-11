@@ -8,8 +8,11 @@
   <div class="middle-wrapper">
     <div class="form-container">
       <app-scan-form
-        [scanType]="scanType"
-        (setScanTypeEvent)="onSetScanType($event)">
+        [scanType]="scanType$ | async"
+        [isLogin]="isLogin$ | async"
+        [scanMessage]="scanMessage$ | async"
+        (setScanTypeEvent)="onSetScanType($event)"
+        (scanUrlEvent)="onScanUrl($event)">
       </app-scan-form>
     </div>
   </div>

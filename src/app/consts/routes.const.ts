@@ -3,5 +3,6 @@ export const ROUTES = {
   login: 'login',
   threats: 'threats',
   contact: 'contact',
-  scan: 'scan'
+  scan: 'scan',
+  scanResults: 'scan-results',
 };

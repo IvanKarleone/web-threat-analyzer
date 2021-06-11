@@ -3,6 +3,8 @@ import { Observable } from 'rxjs';
 import { Select, Store } from '@ngxs/store';
 import { Logout } from '../../store/login/login.actions';
 import { UserState } from '../../store/user/user.state';
+import { ScanState } from '../../store/scan/scan.state';
+import { IAnalyzeAttributes } from '../../intrerfaces/scan';
 
 @Component({
   selector: 'app-header',
@@ -13,6 +15,7 @@ import { UserState } from '../../store/user/user.state';
 export class HeaderComponent {
   @Select(UserState.isLogin) public isLogin$: Observable<boolean>;
   @Select(UserState.fullName) public userFullName$: Observable<string>;
+  @Select(ScanState.analyzeData) public analyzeData$: Observable<IAnalyzeAttributes>;
 
   constructor(private store: Store) {
   }
