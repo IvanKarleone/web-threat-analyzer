@@ -5,6 +5,23 @@ app-root {
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   color: $black;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .app-header-container {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+
+  .app-header-container, .app-footer-container {
+    flex-grow: 0;
+  }
+
+  .app-page-content-container {
+    flex-grow: 1;
+  }
 }
 
 .bold {

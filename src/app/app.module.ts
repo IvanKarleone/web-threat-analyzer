@@ -26,6 +26,10 @@ import { InputFileComponent } from './components/input-file/input-file.component
 import { UserState } from './store/user/user.state';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { ScanState } from './store/scan/scan.state';
+import { ScanResultsComponent } from './pages/scan-results/scan-results.component';
+import { ScanResultsGuard } from './services/scan-results.guard';
+import { ScanStatisticsFormatPipe } from './pipes/scan-statistics-format.pipe';
 
 @NgModule({
   declarations: [
@@ -39,7 +43,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     LoginComponent,
     ScanComponent,
     ScanFormComponent,
-    InputFileComponent
+    InputFileComponent,
+    ScanResultsComponent,
+    ScanStatisticsFormatPipe
   ],
   imports: [
     AppRoutingModule,
@@ -52,11 +58,11 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     HttpClientModule,
     MatMenuModule,
     MatTooltipModule,
-    NgxsModule.forRoot([LoginState, UserState], {
+    NgxsModule.forRoot([LoginState, UserState, ScanState], {
       developmentMode: !environment.production
     }),
   ],
-  providers: [ApiService],
+  providers: [ApiService, ScanResultsGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

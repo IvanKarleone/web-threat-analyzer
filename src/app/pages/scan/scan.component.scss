@@ -1,10 +1,6 @@
 @import "src/scss/variables";
 
 :host {
-  main {
-    height: $height-main-container;
-  }
-
   .header-container {
     padding: $main-padding;
     background: $black;

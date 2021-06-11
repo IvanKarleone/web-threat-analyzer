@@ -4,7 +4,7 @@ const enum Actions {
   GetUsers = '[User API] GetUsers',
   GetUsersSuccess = '[User] GetUsersSuccess',
   GetUserByEmail = '[User] GetUserByEmail',
-  ClearUserState = '[user] ClearUserState'
+  ClearUserState = '[User] ClearUserState'
 }
 
 export class GetUsers {

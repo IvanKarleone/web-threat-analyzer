@@ -25,6 +25,10 @@
           <span class="user-menu-icon material-icons me-2">settings</span>
           <span>{{userFullName$ | async}}</span>
         </button>
+        <button *ngIf="(analyzeData$ | async) !== null" mat-menu-item class="user-menu-btn" routerLink="/scan-results">
+          <span class="user-menu-icon material-icons me-2">pageview</span>
+          <span>Last Scan</span>
+        </button>
         <button mat-menu-item class="user-menu-btn" (click)="logout()">
           <span class="user-menu-icon material-icons me-2">exit_to_app</span>
           <span>Log out</span>

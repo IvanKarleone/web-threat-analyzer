@@ -23,7 +23,7 @@ export class UserStateModel {
 
 @Injectable()
 @State<UserStateModel>({
-  name: 'userState',
+  name: 'UserState',
   defaults: UserStateModel.getInitialState()
 })
 export class UserState {
@@ -38,6 +38,11 @@ export class UserState {
   @Selector()
   public static fullName(state: UserStateModel): string {
     return `${state.currentUser.name} ${state.currentUser.surname}`;
+  }
+
+  @Selector()
+  public static apiKey(state: UserStateModel): string {
+    return state.currentUser.virusTotalApiKey;
   }
 
   @Action(GetUsers)

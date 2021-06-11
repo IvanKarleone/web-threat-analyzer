@@ -1,0 +1,52 @@
+<div class="middle-wrapper">
+  <div class="scan-information-container">
+    <h3 class="title">Scan information</h3>
+    <div class="row">
+      <div class="col-6">
+        <div class="statistics-container section-container">
+          <span class="statistics-container-title section-container-title">Statistics:</span>
+          <span *ngFor="let statistic of (analyzeData$ | async)?.stats | scanStatisticsFormat" [className]="statistic[0]">{{statistic[0]}}: {{statistic[1]}}</span>
+        </div>
+        <div class="section-container">
+          <span class="section-container-title">Url:</span><span>{{scannedUrl$ | async}}</span>
+        </div>
+        <div class="section-container">
+          <span class="section-container-title">Date:</span><span>{{(analyzeData$ | async).date | date:'medium'}}</span>
+        </div>
+      </div>
+      <div class="col-6 scan-information-icon-container">
+        <span class="material-icons scan-information-icon">pageview</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="scan-results-container">
+    <h3 class="title">Scan Results</h3>
+    <div class="table-container">
+      <table class="table">
+        <thead class="table-head">
+        <tr class="table-head-row">
+          <th class="table-head-cell table-cell-1">Scanner</th>
+          <th class="table-head-cell table-cell-2">Result</th>
+        </tr>
+        </thead>
+        <tbody class="table-body">
+        <tr *ngFor="let scanner of (analyzeData$ | async).results" class="table-body-row">
+          <td class="table-cell-1">{{scanner.engine_name}}</td>
+          <td [className]="getTableCellClassName(scanner.category)">
+            <div class="scan-category-icon">
+              <span *ngIf="scanner.category === scanCategory.harmless" class="material-icons">verified_user</span>
+              <span *ngIf="scanner.category === scanCategory.malicious" class="material-icons">error</span>
+              <span *ngIf="scanner.category === scanCategory.suspicious" class="material-icons">warning</span>
+              <span *ngIf="scanner.category === scanCategory.undetected" class="material-icons">help_outline</span>
+              <span *ngIf="scanner.category === scanCategory.timeout" class="material-icons">help_outline</span>
+            </div>
+            <span class="d-inline-block">{{scanner.result}}</span>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
